@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .outer
+        .middle
+            .login-inner
+                form(role='form', action="/auth/login", method="post", style='max-width: 300px;')
+                    table.table
+                        tr
+                            th.text-center(colspan=2)= data["title"]
+                        tr
+                            td
+                                label Username
+                            td
+                                input.form-control(type='text', name="username", placeholder='Enter Username')
+                        tr
+                            td
+                                label Password
+                            td
+                                input.form-control(type="password", name="password", placeholder="Password")
+                    input.btn.btn-primary.pull-right(type="submit" value="Login" tabindex="1")

@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let passport = require('passport');
+let router = express.Router();
+let helpers = require('../lib/helpers');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', helpers.ensureAuthenticated, function(req, res, next) {
+    res.render('index', { title: 'Tracker' });
 });
 
 module.exports = router;
