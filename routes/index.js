@@ -5,7 +5,7 @@ let helpers = require('../lib/helpers');
 
 /* GET home page. */
 router.get('/', helpers.ensureAuthenticated, function(req, res, next) {
-    res.render('index', { title: 'Tracker' });
+    res.render('index', { title: 'Tracker', user : req.user});
 });
 
 module.exports = router;

@@ -1,21 +1,22 @@
 extends layout
 
 block content
-    .outer
-        .middle
-            .login-inner
-                form(role='form', action="/auth/login", method="post", style='max-width: 300px;')
-                    table.table
-                        tr
-                            th.text-center(colspan=2)= data["title"]
-                        tr
-                            td
-                                label Username
-                            td
-                                input.form-control(type='text', name="username", placeholder='Enter Username')
-                        tr
-                            td
-                                label Password
-                            td
-                                input.form-control(type="password", name="password", placeholder="Password")
-                    input.btn.btn-primary.pull-right(type="submit" value="Login" tabindex="1")
+    .d-flex.h-100.align-items-center
+        .col-4.mx-auto
+            form(role='form', action="/auth/login", method="post", style='max-width: 300px;')
+                .row.form-group
+                    .col.text-center
+                        b= data["title"]
+                .row.form-group
+                    .col-4
+                        label Username
+                    .col-8
+                        input.form-control(type='text', name="username", placeholder='Enter Username')
+                .row.form-group
+                    .col-4
+                        label Password
+                    .col-8
+                        input.form-control(type="password", name="password", placeholder="Password")
+                .row
+                    .col-4.ml-auto
+                        input.btn.btn-primary(type="submit" value="Login" tabindex="1")
