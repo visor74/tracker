@@ -1,8 +1,12 @@
+a {
+  color: #00B7FF;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
-a {
-  color: #00B7FF;
+/* Vertical centering is based on the height of the container */
+body,html {
+  height: 100%
 }
