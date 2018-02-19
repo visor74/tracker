@@ -1,0 +1,21 @@
+.modal.fade(id="addParcel")
+    .modal-dialog.modal-dialog-centered
+        .modal-content
+
+            .modal-header
+                h4.modal-title Modal Heading
+                button.close(type="button" data-dismiss="modal") &times;
+
+            .modal-body
+                form(action="/parcel/add")
+                    form-group
+                        label(for="track") Track number:
+                        input.form-control(name="track" id="track" type="text")
+                    form-group
+                        label(for="parcel") Parcel description:
+                        input.form-control(name="parcel" id="parcel" type="text")
+
+            .modal-footer
+                button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                button.btn.btn-primary(type="button" data-dismiss="modal") Add
+

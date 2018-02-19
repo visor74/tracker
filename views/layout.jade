@@ -7,14 +7,19 @@ html
         link(rel="stylesheet" href="/stylesheets/style.css")
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
     body
-        nav.navbar.navbar-epand-sm.bg-light.navbar-light.fixed-top
-            ul.nav.ml-auto
-                if locals.user
+        nav.navbar.navbar-expand-sm.bg-secondary.navbar-dark.fixed-top
+            a.navbar-brand(href="/") Tracker
+            if locals.user
+                ul.navbar-nav
                     li.nav-item
-                        span.navbar-text Logged in as #{locals.user.username}
+                        a.nav-link(href="#" data-toggle="modal" data-target="#addParcel") Add parcel
+                ul.navbar-nav.ml-auto
+                    li.nav-item
+                        a.nav-link.disabled Logged in as #{locals.user.username}
                     li.nav-item
                         a.nav-link(href="/auth/logout/") Logout
-                else
+            else
+                ul.navbar-nav.ml-auto
                     li.nav-item
                         a.nav-link(href="/auth/login/") Login
                     li.nav-item
