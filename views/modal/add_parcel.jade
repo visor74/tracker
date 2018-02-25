@@ -4,18 +4,19 @@
 
             .modal-header
                 h4.modal-title Modal Heading
-                button.close(type="button" data-dismiss="modal") &times;
+                button.close(data-dismiss="modal" tabindex="4" type="button") &times;
 
             .modal-body
-                form(action="/parcel/add")
+                form(id="f-add-parcel" name="f-add-parcel" action="/parcel/add")
                     form-group
                         label(for="track") Track number:
-                        input.form-control(name="track" id="track" type="text")
+                        input.form-control(id="track" name="track" tabindex="0" type="text")
                     form-group
                         label(for="parcel") Parcel description:
-                        input.form-control(name="parcel" id="parcel" type="text")
+                        input.form-control(id="parcel" name="parcel" tabindex="1" type="text")
 
             .modal-footer
-                button.btn.btn-secondary(type="button" data-dismiss="modal") Close
-                button.btn.btn-primary(type="button" data-dismiss="modal") Add
+                button.btn.btn-secondary(data-dismiss="modal" tabindex="3" type="button") Close
+                button.btn.btn-primary(data-dismiss="modal" id="btn-add-parcel" tabindex="2" type="button") Add
 
+script(src="javascripts/modal/add_parcel.js")

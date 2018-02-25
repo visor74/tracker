@@ -45,7 +45,7 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
-mongoose.connection.openUri('mongodb://localhost/passport_local_mongoose_express4');
+mongoose.connection.openUri('mongodb://localhost/track');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

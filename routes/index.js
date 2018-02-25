@@ -10,5 +10,6 @@ router.get('/', helpers.ensureAuthenticated, function(req, res) {
 });
 
 router.get('/parcel/add', parcelController.getCreateParcel);
+router.post('/parcel/add', parcelController.postCreateParcel);
 
 module.exports = router;
